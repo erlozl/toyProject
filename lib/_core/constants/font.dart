@@ -37,5 +37,5 @@ TextStyle discountText() {
 
 TextStyle productPriceText() {
   return TextStyle(
-      fontSize: 18, fontWeight: FontWeight.w500, color: basicColorB1);
+      fontSize: 18, fontWeight: FontWeight.w600, color: basicColorB1);
 }

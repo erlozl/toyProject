@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_blog/data/dto/product_request.dart';
 import 'package:flutter_blog/data/dto/response_dto.dart';
+import 'package:flutter_blog/data/dto/toyresponse_dto.dart';
 import 'package:flutter_blog/data/model/product.dart';
 import 'package:flutter_blog/data/repository/product_repository.dart';
 import 'package:flutter_blog/main.dart';
@@ -20,9 +21,10 @@ class ProductListViewModel extends StateNotifier<ProductListModel?> {
   Ref ref;
 
   Future<void> notifiyInit() async {
-    ResponseDTO responseDTO = await ProductRepository().fetchProductList();
+    ToyResponseDTO toyResponseDTO =
+        await ProductRepository().fetchProductList();
 
-    state = ProductListModel(responseDTO.data);
+    state = ProductListModel(toyResponseDTO.response);
   }
 }
 
